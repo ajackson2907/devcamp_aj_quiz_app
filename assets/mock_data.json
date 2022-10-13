@@ -1,0 +1,775 @@
+[
+    {
+        "id": "firebase",
+        "img": "firebase.png",
+        "title": "Firebase",
+        "shortDescription": "Trace performance on any platform",
+        "quizzes": [
+            {
+                "description": "Firebase Performance Monitoring is a service that helps you to gain insight into the performance characteristics of your iOS, Android, and web apps.",
+                "id": "firebase-perf",
+                "questions": [
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "detail": "Close, but no cigar!",
+                                "value": "putMetric"
+                            },
+                            {
+                                "correct": false,
+                                "detail": "Nope, that takes a string value to segment performance",
+                                "value": "putAttribute"
+                            },
+                            {
+                                "correct": true,
+                                "detail": "Awesome work!",
+                                "value": "incrementMetric"
+                            }
+                        ],
+                        "text": "Which method is used to increase a running count or value during a trace?"
+                    },
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "detail": "Error reporting can be useful during a trace.",
+                                "value": "error codes"
+                            },
+                            {
+                                "correct": false,
+                                "detail": "No, that's a decent metric",
+                                "value": "count of clicks"
+                            },
+                            {
+                                "correct": true,
+                                "detail": "Good job, you should never use personal data that can identify a user during a trace.",
+                                "value": "email address"
+                            }
+                        ],
+                        "text": "Which option is a BAD piece of data to put into a trace?"
+                    },
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "value": "false"
+                            },
+                            {
+                                "correct": true,
+                                "detail": "Correct, you can view this data on the network tab. ",
+                                "value": "true"
+                            }
+                        ],
+                        "text": "Firebase perf automatically tracks all HTTP requests?"
+                    }
+                ],
+                "title": "Firebase Performance Monitoring",
+                "video": "https://youtu.be/KYYjdWSrRjI"
+            }
+        ]
+    },
+    {
+        "id": "firestore",
+        "img": "firestore.png",
+        "title": "Cloud Firestore",
+        "shortDescription": "Getting started with NoSQL",
+        "quizzes": [
+            {
+                "description": "Cloud Firestore is a scalable NoSQL cloud database to store and sync data for client and server-side development.",
+                "id": "firestore-basics",
+                "questions": [
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "detail": "No, they have a flexible schema, commonly called schema-less",
+                                "value": "true"
+                            },
+                            {
+                                "correct": true,
+                                "detail": "Yes, no schema means rapid development, but you need to be careful about data modeling",
+                                "value": "false"
+                            }
+                        ],
+                        "text": "NoSQL databases require a schema"
+                    },
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "detail": "Nope, you must be thinking of SQL",
+                                "value": "Tables and Rows"
+                            },
+                            {
+                                "correct": false,
+                                "detail": "That sounds more like cloud file storage",
+                                "value": "Buckets and Files"
+                            },
+                            {
+                                "correct": true,
+                                "detail": "Bingo!",
+                                "value": "Collections and Documents"
+                            }
+                        ],
+                        "text": "Document databases are organized into a hierarchy of ..."
+                    }
+                ],
+                "title": "Cloud Firestore Basics"
+            }
+        ]
+    },
+    {
+        "id": "cf",
+        "img": "cloud-functions.png",
+        "title": "Cloud Functions",
+        "shortDescription": "Cloud Functions is a serverless framework that runs backend code in response to events triggered by Firebase features and HTTPS requests",
+        "quizzes": [
+            {
+                "description": "Triggers are events the determine when your backend code will be executed",
+                "id": "cf-triggers",
+                "questions": [
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "value": "Firestore"
+                            },
+                            {
+                                "correct": false,
+                                "value": "Pub/Sub"
+                            },
+                            {
+                                "correct": true,
+                                "value": "Callable"
+                            }
+                        ],
+                        "text": "Which trigger provides the user's authentication state?"
+                    },
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "value": "HTTP"
+                            },
+                            {
+                                "correct": true,
+                                "value": "Pub/Sub"
+                            }
+                        ],
+                        "text": "Which trigger is more secure for passing messages between GCP services?"
+                    },
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "value": "onCreate"
+                            },
+                            {
+                                "correct": false,
+                                "value": "onUpdate"
+                            },
+                            {
+                                "correct": true,
+                                "value": "onRead"
+                            }
+                        ],
+                        "text": "Which is NOT a valid Firestore trigger?"
+                    },
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "value": "true"
+                            },
+                            {
+                                "correct": true,
+                                "value": "false"
+                            }
+                        ],
+                        "text": "Firebase rules are applied to database writes in a Cloud function?"
+                    }
+                ],
+                "title": "Cloud Functions Triggers"
+            },
+            {
+                "description": "Cloud Functions allow you to run backend code with serverless event-driven infrastructure",
+                "id": "cf-basics",
+                "questions": [
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "detail": "That would be physically impossible",
+                                "value": "true"
+                            },
+                            {
+                                "correct": true,
+                                "detail": "Right! A server is running somewhere, but Google does are the scaling and config for you",
+                                "value": "false"
+                            }
+                        ],
+                        "text": "Serverless really means no servers are used."
+                    },
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "value": "$25/month per Function"
+                            },
+                            {
+                                "correct": true,
+                                "value": "Costs scale with usage"
+                            }
+                        ],
+                        "text": "How much do Cloud Functions cost?"
+                    },
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "value": "C#"
+                            },
+                            {
+                                "correct": false,
+                                "value": "Python"
+                            },
+                            {
+                                "correct": true,
+                                "value": "JavaScript (Node)"
+                            }
+                        ],
+                        "text": "What is the most common programming language used in Firebase Cloud Functions?"
+                    },
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "value": "Cron"
+                            },
+                            {
+                                "correct": true,
+                                "value": "Admob"
+                            },
+                            {
+                                "correct": true,
+                                "value": "HTTP"
+                            }
+                        ],
+                        "text": "Which is NOT a support function type?"
+                    },
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "value": "false"
+                            },
+                            {
+                                "correct": true,
+                                "value": "true"
+                            }
+                        ],
+                        "text": "Cloud Functions are \"stateless\""
+                    }
+                ],
+                "title": "Cloud Functions Basics"
+            }
+        ]
+    },
+    {
+        "id": "flutter",
+        "img": "flutter.png",
+        "shortDescription": "Flutter is a framework for building high-quality cross platform apps in record time.",
+        "title": "Flutter",
+        "quizzes": [
+            {
+                "description": "Gestures make it possible for users to interact with your Flutter app.",
+                "id": "flutter-gestures",
+                "questions": [
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "detail": "Actually, it will only splash when inside another Material widget.",
+                                "value": "true"
+                            },
+                            {
+                                "correct": true,
+                                "detail": "You are smart!",
+                                "value": "false"
+                            }
+                        ],
+                        "text": "An InkWell will always produces an ink splash animation when tapped"
+                    },
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "detail": "Nope!",
+                                "value": "TapDetector"
+                            },
+                            {
+                                "correct": false,
+                                "detail": "Nope, that is not a thing.",
+                                "value": "EventHandler"
+                            },
+                            {
+                                "correct": true,
+                                "detail": "You are good! The GestureDetector gives you access to all sorts of fun events.",
+                                "value": "GestureDetector"
+                            }
+                        ],
+                        "text": "Which widget is a low level building block that can handle all gestures?"
+                    },
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "detail": "Nope, an InkWell can detect tap and press gestures.",
+                                "value": "InkWell"
+                            },
+                            {
+                                "correct": false,
+                                "detail": "What good would a button be if it did not detect a press gesture?",
+                                "value": "FlatButton"
+                            },
+                            {
+                                "correct": true,
+                                "detail": "Bingo! A container is just for presentation.",
+                                "value": "Container"
+                            }
+                        ],
+                        "text": "Which widget does NOT handle gestures?"
+                    },
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "detail": "try again",
+                                "value": "false"
+                            },
+                            {
+                                "correct": true,
+                                "detail": "Correct!",
+                                "value": "true"
+                            }
+                        ],
+                        "text": "All button must define on onPressed handler"
+                    }
+                ],
+                "title": "Flutter Gestures",
+                "video": "https://fireship.io/courses/flutter-firebase/widgets-gestures/"
+            },
+            {
+                "description": "The Flex widget, along with Column and Row, make it possible to layout and align complex layouts with ease.",
+                "id": "flutter-flex",
+                "questions": [
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "detail": "A stack is actually an entirely different layout strategy",
+                                "value": "Stack"
+                            },
+                            {
+                                "correct": false,
+                                "detail": "Flexible is a Flutter widget, but not the correct answer here",
+                                "value": "Flexible"
+                            },
+                            {
+                                "correct": true,
+                                "detail": "Yes, you can use a Flex widget and set its flex axis to horizontal (Row) or vertical (Column)",
+                                "value": "Flex"
+                            }
+                        ],
+                        "text": "The Row and Column widgets are an abstraction for which base widget."
+                    },
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "detail": "Rows and Columns have all the same properties, the only difference is the axis.",
+                                "value": "Not possible on Column"
+                            },
+                            {
+                                "correct": false,
+                                "detail": "Yes, and the first child will sit at the top, maximizing the space between them.",
+                                "value": "Move to the bottom"
+                            },
+                            {
+                                "correct": true,
+                                "detail": "That sounds more like MainAxisAlignment.spaceAround",
+                                "value": "Move to the center of the Column"
+                            }
+                        ],
+                        "text": "Let's imagine you have two buttons in a Column. Setting MainAxisAlignment.spaceBetween will cause the SECOND child to"
+                    },
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "value": "expand its children horizontally"
+                            },
+                            {
+                                "correct": false,
+                                "value": "expand itself horizontally"
+                            },
+                            {
+                                "correct": true,
+                                "value": "expand itself AND children horizontally"
+                            }
+                        ],
+                        "text": "When you set CrossAxisAligment.stretch on a Column it will"
+                    },
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "value": "false"
+                            },
+                            {
+                                "correct": true,
+                                "value": "true"
+                            }
+                        ],
+                        "text": "A Row will try to take up as much space as possible across the horizontal axis"
+                    },
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "value": "horiozontally"
+                            },
+                            {
+                                "correct": true,
+                                "value": "vertically"
+                            }
+                        ],
+                        "text": "Setting the crossAxisAlignment of a Row will cause its children to move"
+                    }
+                ],
+                "title": "Flex Layout",
+                "video": "https://youtu.be/u0e2L5yoxFI"
+            },
+            {
+                "description": "Flutter provides a number of widgets that help you build apps that follow Material Design.",
+                "id": "flutter-material",
+                "questions": [
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "value": "FlatButton"
+                            },
+                            {
+                                "correct": false,
+                                "value": "FloatingActionButton"
+                            },
+                            {
+                                "correct": true,
+                                "value": "RoundedButton"
+                            }
+                        ],
+                        "text": "Which is NOT a type of Material button?"
+                    },
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "value": "MaterialDesign"
+                            },
+                            {
+                                "correct": false,
+                                "value": "MaterialRoot"
+                            },
+                            {
+                                "correct": true,
+                                "value": "MaterialApp"
+                            }
+                        ],
+                        "text": "What is very first Widget you will include when using material? "
+                    },
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "value": "OnTouch"
+                            },
+                            {
+                                "correct": false,
+                                "value": "TouchHandler"
+                            },
+                            {
+                                "correct": true,
+                                "value": "GestureDetector"
+                            }
+                        ],
+                        "text": "Which widget is used to handle user interaction events?"
+                    },
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "value": "Router"
+                            },
+                            {
+                                "correct": true,
+                                "value": "Navigator"
+                            }
+                        ],
+                        "text": "Which Widget is used to handle routing and navigation?"
+                    },
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "value": "appBar"
+                            },
+                            {
+                                "correct": false,
+                                "value": "bottomNavigationBar"
+                            },
+                            {
+                                "correct": true,
+                                "value": "loadingSpinner"
+                            }
+                        ],
+                        "text": "Which is NOT a property of a Scaffold widget?"
+                    }
+                ],
+                "title": "Material Widgets"
+            },
+            {
+                "description": "Scrollable widgets like ListView and GridView allow users to pan horizontally or vertically across the screen.",
+                "id": "flutter-scroll",
+                "questions": [
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "detail": "Any ListView can scroll horizontally, so that is not very special here.",
+                                "value": "Can scroll horizontally"
+                            },
+                            {
+                                "correct": false,
+                                "detail": "Ummm, no.",
+                                "value": "Builds with a Stream"
+                            },
+                            {
+                                "correct": true,
+                                "detail": "Correct, it determines how to build the items based on the current scroll index.",
+                                "value": "Builds on the Fly"
+                            }
+                        ],
+                        "text": "What makes ListView.builder() special?"
+                    },
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "detail": "No, but this can be used to change the motion physics of the widget.",
+                                "value": "ScrollPhysics"
+                            },
+                            {
+                                "correct": false,
+                                "detail": "Not quite.",
+                                "value": "ScreenController"
+                            },
+                            {
+                                "correct": true,
+                                "detail": "Yes, the controller allows you to manually change the scroll position.",
+                                "value": "ScrollController"
+                            }
+                        ],
+                        "text": "What would be useful if you wanted to scroll directly to an index on a button tap?"
+                    },
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "detail": "Nope, functions are used for builder arguments.",
+                                "value": "true"
+                            },
+                            {
+                                "correct": true,
+                                "detail": "Good! The children argument is a List<Widget>",
+                                "value": "false"
+                            }
+                        ],
+                        "text": "The children argument of a ListView must be a function"
+                    },
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "detail": "Try again",
+                                "value": "ListView"
+                            },
+                            {
+                                "correct": false,
+                                "detail": "Wrong answer pal!",
+                                "value": "GridView"
+                            },
+                            {
+                                "correct": true,
+                                "detail": "Yes, if you want a Column to scroll put it inside a ListView.",
+                                "value": "Column"
+                            }
+                        ],
+                        "text": "Which widget does NOT scroll?"
+                    }
+                ],
+                "title": "Scroll",
+                "video": "https://fireship.io/courses/flutter-firebase/widgets-scroll-list/"
+            },
+            {
+                "description": "Containers (and friends) are used to handle single widget alignment, positioning, and styling.",
+                "id": "flutter-containers",
+                "questions": [
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "value": "Border"
+                            },
+                            {
+                                "correct": false,
+                                "value": "StyleSheet"
+                            },
+                            {
+                                "correct": true,
+                                "value": "BoxDecoration"
+                            }
+                        ],
+                        "text": "Where can you add shadows or color gradients to a container?"
+                    },
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "value": "Container(padding: Padding(20))"
+                            },
+                            {
+                                "correct": false,
+                                "value": "Padding(20)"
+                            },
+                            {
+                                "correct": true,
+                                "value": "Padding(padding: EdgeInsets.all(20))"
+                            }
+                        ],
+                        "text": "If you need to add padding of 20 pixels to all sides, you should use which option?"
+                    },
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "value": "false"
+                            },
+                            {
+                                "correct": true,
+                                "value": "true"
+                            }
+                        ],
+                        "text": "Containers with children size themselves to their children. "
+                    },
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "value": "false"
+                            },
+                            {
+                                "correct": true,
+                                "value": "true"
+                            }
+                        ],
+                        "text": "Containers with no children try to be as big as possible unless the incoming constraints are unbounded"
+                    }
+                ],
+                "title": "Containers"
+            },
+            {
+                "description": "Flutter is a framework for building high-quality cross platform apps in record time?",
+                "id": "flutter-basics",
+                "questions": [
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "detail": "C'mon... I think you know better!",
+                                "value": "Fortran"
+                            },
+                            {
+                                "correct": false,
+                                "value": "TypeScript"
+                            },
+                            {
+                                "correct": true,
+                                "detail": "Yes, Dart delivers excellent performance and a great developer-experience. ",
+                                "value": "Dart"
+                            }
+                        ],
+                        "text": "Developers use which programming language to build Flutter apps?"
+                    },
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "detail": "No, that is a more common term in web frameworks like React and Angular ",
+                                "value": "Components"
+                            },
+                            {
+                                "correct": false,
+                                "detail": "No, that's a term you are more likely to be used in HTML",
+                                "value": "Divs"
+                            },
+                            {
+                                "correct": true,
+                                "detail": "Everything is a Widget! Everything is a Widget! Everything is a...",
+                                "value": "Widgets"
+                            }
+                        ],
+                        "text": "The UI in Flutter is abstracted into a tree of..."
+                    },
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "value": "detectChanges"
+                            },
+                            {
+                                "correct": false,
+                                "value": "render"
+                            },
+                            {
+                                "correct": true,
+                                "value": "setState"
+                            }
+                        ],
+                        "text": "Which function is called to re-render the UI of a StatefulWidget?"
+                    },
+                    {
+                        "options": [
+                            {
+                                "correct": false,
+                                "value": "init()"
+                            },
+                            {
+                                "correct": false,
+                                "value": "start()"
+                            },
+                            {
+                                "correct": true,
+                                "value": "main()"
+                            }
+                        ],
+                        "text": "What is the name of the function that kicks off your code in every Flutter/Dart app?"
+                    }
+                ],
+                "title": "Basics",
+                "video": "https://youtu.be/7sJZi0grFR4"
+            }
+        ]
+    }
+]

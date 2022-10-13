@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "173983308935",
+    "project_id": "fdc-aj-quiz-app",
+    "storage_bucket": "fdc-aj-quiz-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:173983308935:android:8b44954f997a979a05ec22",
+        "android_client_info": {
+          "package_name": "com.interneers.fdc_aj_quiz_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "173983308935-ic7p2vhdsigup28804bq9f2riafskbtp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmb7UU3Waq76cgY2lURLrYIGvG9agX6Y4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "173983308935-ic7p2vhdsigup28804bq9f2riafskbtp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
