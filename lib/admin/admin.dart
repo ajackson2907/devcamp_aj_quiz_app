@@ -135,7 +135,6 @@ class _AdminScreenState extends State<AdminScreen> {
                                     );
                                   },
                                   child: ListTile(
-                                    textColor: Colors.white,
                                     title: Text(topicsList[index].title),
                                     trailing: const Icon(Icons.arrow_left),
                                   ),

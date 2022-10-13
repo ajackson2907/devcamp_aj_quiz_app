@@ -1,3 +1,4 @@
+import 'package:fdc_aj_quiz_app/helpers/app_constants.dart';
 import 'package:flutter/material.dart';
 
 import '../models/models.dart';
@@ -67,18 +68,17 @@ class TopicScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        title: Text(topic.title),
+        backgroundColor: AppConstants.hexToColor(AppConstants.appPrimaryColorGreen),
       ),
       body: ListView(children: [
         Hero(
           tag: topic.img,
-          child: Image.asset('assets/covers/${topic.img}',
-              width: MediaQuery.of(context).size.width),
+          child: Image.asset('assets/covers/${topic.img}', width: MediaQuery.of(context).size.width),
         ),
         Text(
           topic.title,
-          style: const TextStyle(
-              height: 2, fontSize: 20, fontWeight: FontWeight.bold),
+          style: const TextStyle(height: 2, fontSize: 20, fontWeight: FontWeight.bold),
         ),
         QuizList(topic: topic)
       ]),

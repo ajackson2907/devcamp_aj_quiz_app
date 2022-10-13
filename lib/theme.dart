@@ -6,14 +6,13 @@ var appTheme = ThemeData(
   bottomAppBarTheme: const BottomAppBarTheme(
     color: Color.fromARGB(221, 175, 175, 175),
   ),
-  brightness: Brightness.dark,
+  brightness: Brightness.light,
   primaryColor: AppConstants.hexToColor(AppConstants.appPrimaryColorGreen),
   backgroundColor: AppConstants.hexToColor(AppConstants.appBackgroundColor),
   primaryColorLight: AppConstants.hexToColor(AppConstants.appPrimaryColorLight),
   dividerColor: AppConstants.hexToColor(AppConstants.appBackgroundColorGray),
   textTheme: TextTheme(
-    caption: TextStyle(
-        color: AppConstants.hexToColor(AppConstants.appPrimaryFontColorWhite)),
+    caption: TextStyle(color: AppConstants.hexToColor(AppConstants.appPrimaryFontColorWhite)),
     bodyText1: const TextStyle(fontSize: 18),
     bodyText2: const TextStyle(fontSize: 16),
     button: const TextStyle(

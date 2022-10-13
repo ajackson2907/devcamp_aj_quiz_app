@@ -36,10 +36,7 @@ class TopicsScreen extends StatelessWidget {
               title: const Text('Topics'),
               actions: [
                 IconButton(
-                  icon: Icon(
-                    FontAwesomeIcons.circleUser,
-                    color: AppConstants.hexToColor(AppConstants.appPrimaryColorLight),
-                  ),
+                  icon: const Icon(FontAwesomeIcons.circleUser),
                   onPressed: () => Navigator.pushNamed(context, '/profile'),
                 )
               ],
