@@ -1,16 +1,15 @@
+import 'package:fdc_aj_quiz_app/main.dart';
+import 'package:fdc_aj_quiz_app/models/models.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../models/models.dart';
-import 'quiz_state.dart';
-
-class StartPage extends StatelessWidget {
+class StartPage extends ConsumerWidget {
   final Quiz quiz;
   const StartPage({super.key, required this.quiz});
 
   @override
-  Widget build(BuildContext context) {
-    var state = Provider.of<QuizState>(context);
+  Widget build(BuildContext context, WidgetRef ref) {
+    var state = ref.watch(quizStateNotifier);
 
     return Container(
       padding: const EdgeInsets.all(20),

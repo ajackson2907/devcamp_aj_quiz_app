@@ -1,9 +1,9 @@
+import 'package:fdc_aj_quiz_app/main.dart';
+import 'package:fdc_aj_quiz_app/models/models.dart';
+import 'package:fdc_aj_quiz_app/quiz/quiz.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:provider/provider.dart';
-
-import '../quiz/quiz.dart';
-import '../models/models.dart';
 
 class TopicDrawer extends StatelessWidget {
   final List<Topic> topics;
@@ -24,7 +24,6 @@ class TopicDrawer extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 10, left: 10),
                   child: Text(
                     topic.title,
-                    // textAlign: TextAlign.left,
                     style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -87,15 +86,16 @@ class QuizList extends StatelessWidget {
   }
 }
 
-class QuizBadge extends StatelessWidget {
+class QuizBadge extends ConsumerWidget {
   final String quizId;
   final Topic topic;
 
   const QuizBadge({super.key, required this.quizId, required this.topic});
 
   @override
-  Widget build(BuildContext context) {
-    Report report = Provider.of<Report>(context);
+  Widget build(BuildContext context, WidgetRef ref) {
+    Report report = Report();
+    ref.watch(reportStreamProvider).whenData((value) => report = value);
     List completed = report.topics[topic.id] ?? [];
     if (completed.contains(quizId)) {
       return const Icon(FontAwesomeIcons.checkDouble, color: Colors.green);

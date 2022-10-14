@@ -1,7 +1,6 @@
+import 'package:fdc_aj_quiz_app/helpers/app_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
-import '../helpers/app_constants.dart';
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({super.key});

@@ -1,18 +1,18 @@
+import 'package:fdc_aj_quiz_app/helpers/app_constants.dart';
+import 'package:fdc_aj_quiz_app/main.dart';
+import 'package:fdc_aj_quiz_app/models/models.dart';
 import 'package:fdc_aj_quiz_app/quiz/quiz_state.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:provider/provider.dart';
 
-import '../helpers/app_constants.dart';
-import '../models/models.dart';
-
-class QuestionPage extends StatelessWidget {
+class QuestionPage extends ConsumerWidget {
   final Question question;
   const QuestionPage({super.key, required this.question});
 
   @override
-  Widget build(BuildContext context) {
-    var state = Provider.of<QuizState>(context);
+  Widget build(BuildContext context, WidgetRef ref) {
+    var state = ref.watch(quizStateNotifier);
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
@@ -42,11 +42,7 @@ class QuestionPage extends StatelessWidget {
                     padding: const EdgeInsets.all(16),
                     child: Row(
                       children: [
-                        Icon(
-                            state.selected == opt
-                                ? FontAwesomeIcons.circleCheck
-                                : FontAwesomeIcons.circle,
-                            size: 30),
+                        Icon(state.selected == opt ? FontAwesomeIcons.circleCheck : FontAwesomeIcons.circle, size: 30),
                         Expanded(
                           child: Container(
                             margin: const EdgeInsets.only(left: 16),
@@ -88,11 +84,7 @@ class QuestionPage extends StatelessWidget {
                 style: const TextStyle(fontSize: 18, color: Colors.white54),
               ),
               ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: correct
-                        ? AppConstants.hexToColor(
-                            AppConstants.appPrimaryColorAction)
-                        : Colors.red),
+                style: ElevatedButton.styleFrom(backgroundColor: correct ? AppConstants.hexToColor(AppConstants.appPrimaryColorAction) : Colors.red),
                 child: Text(
                   correct ? 'Next =>' : 'Try Again',
                   style: const TextStyle(

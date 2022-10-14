@@ -8,8 +8,8 @@ import 'package:fdc_aj_quiz_app/topics/topics.dart';
 
 var appRoutes = {
   '/': (context) => const HomeScreen(),
-  '/login': (context) => LoginScreen(),
-  '/register': (context) => RegisterScreen(),
+  '/login': (context) => const LoginScreen(),
+  '/register': (context) => const RegisterScreen(),
   '/topics': (context) => const TopicsScreen(),
   '/profile': (context) => const ProfileScreen(),
   '/about': (context) => const AboutScreen(),

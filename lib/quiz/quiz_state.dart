@@ -1,6 +1,6 @@
+import 'package:fdc_aj_quiz_app/models/models.dart';
 import 'package:flutter/material.dart';
 
-import '../models/models.dart';
 
 class QuizState with ChangeNotifier {
   double _progress = 0;

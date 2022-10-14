@@ -1,40 +1,38 @@
-// ignore_for_file: prefer_const_constructors, avoid_print
-
+import 'package:fdc_aj_quiz_app/main.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
-import 'package:provider/provider.dart';
 
 import '../helpers/app_constants.dart';
 import '../services/auth.dart';
 import 'login_button.dart';
 import 'login_text_field.dart';
 
-class LoginScreen extends StatelessWidget {
-  LoginScreen({super.key});
+class LoginScreen extends ConsumerStatefulWidget {
+  const LoginScreen({super.key});
 
+  @override
+  ConsumerState<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends ConsumerState<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
-
   final userNameController = TextEditingController();
   final passwordController = TextEditingController();
 
   Future<void> loginUser(BuildContext context) async {
     if (_formKey.currentState != null && _formKey.currentState!.validate()) {
-      Future<bool> result = context
-          .read<AuthService>()
-          .loginUser(userNameController.text, passwordController.text);
+      Future<bool> result = ref.read(authServiceProvier).loginUser(userNameController.text, passwordController.text);
       _formKey.currentState!.reset();
       if (!await result) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
+          const SnackBar(
             content: Text('Login failed!'),
           ),
         );
       }
-      print('Login form validation passed');
-    } else {
-      print('Login Not Successful Form issue');
     }
   }
 
@@ -60,8 +58,7 @@ class LoginScreen extends StatelessWidget {
                       child: Text(
                         '#flutterdevcamp \nLondon \n${DateFormat.MMMMd().format(DateTime.now())} ',
                         style: TextStyle(
-                          color: AppConstants.hexToColor(
-                              AppConstants.appPrimaryColorGreen),
+                          color: AppConstants.hexToColor(AppConstants.appPrimaryColorGreen),
                           fontSize: 24,
                           fontWeight: FontWeight.w600,
                         ),
@@ -76,9 +73,7 @@ class LoginScreen extends StatelessWidget {
                         LoginTextField(
                           hintText: "Enter your username",
                           validator: ((value) {
-                            if (value != null &&
-                                value.isNotEmpty &&
-                                value.length < 5) {
+                            if (value != null && value.isNotEmpty && value.length < 5) {
                               return "Your username should be more than 5 characters";
                             } else if (value != null && value.isEmpty) {
                               return "Please type your username";
@@ -87,7 +82,7 @@ class LoginScreen extends StatelessWidget {
                           }),
                           textEditingController: userNameController,
                         ),
-                        SizedBox(height: 24),
+                        const SizedBox(height: 24),
                         LoginTextField(
                           textEditingController: passwordController,
                           obscureText: true,
@@ -103,24 +98,22 @@ class LoginScreen extends StatelessWidget {
                       await loginUser(context);
                     },
                     text: "Login",
-                    color: AppConstants.hexToColor(
-                        AppConstants.appPrimaryColorGreen),
+                    color: AppConstants.hexToColor(AppConstants.appPrimaryColorGreen),
                   ),
                   const SizedBox(height: 24),
                   Center(
                     child: RichText(
                       text: TextSpan(
                         text: 'Not yet registered? ',
-                        style: TextStyle(color: Colors.black),
+                        style: const TextStyle(color: Colors.black),
                         children: [
                           TextSpan(
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {
-                                Navigator.of(context).pushNamedAndRemoveUntil(
-                                    '/register', (route) => false);
+                                Navigator.of(context).pushNamedAndRemoveUntil('/register', (route) => false);
                               },
                             text: 'Sign Up',
-                            style: TextStyle(
+                            style: const TextStyle(
                               decoration: TextDecoration.underline,
                               color: Color.fromARGB(255, 0, 176, 255),
                             ),
@@ -134,15 +127,13 @@ class LoginScreen extends StatelessWidget {
                     icon: FontAwesomeIcons.userNinja,
                     text: 'Continue as Guest',
                     loginMethod: AuthService().anonymousLogin,
-                    color: AppConstants.hexToColor(
-                        AppConstants.appPrimaryColorGreen),
+                    color: AppConstants.hexToColor(AppConstants.appPrimaryColorGreen),
                   ),
                   const SizedBox(height: 24),
                   LoginButton(
                     text: 'Sign in with Google',
                     icon: FontAwesomeIcons.google,
-                    color: AppConstants.hexToColor(
-                        AppConstants.appPrimaryColorAction),
+                    color: AppConstants.hexToColor(AppConstants.appPrimaryColorAction),
                     loginMethod: AuthService().googleLogin,
                   ),
                 ],

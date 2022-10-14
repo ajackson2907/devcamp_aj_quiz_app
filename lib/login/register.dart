@@ -1,19 +1,21 @@
-// ignore_for_file: avoid_print
-
+import 'package:fdc_aj_quiz_app/helpers/app_constants.dart';
+import 'package:fdc_aj_quiz_app/login/login_button.dart';
+import 'package:fdc_aj_quiz_app/login/login_text_field.dart';
+import 'package:fdc_aj_quiz_app/main.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
-import 'package:provider/provider.dart';
 
-import '../helpers/app_constants.dart';
-import '../services/auth.dart';
-import 'login_button.dart';
-import 'login_text_field.dart';
+class RegisterScreen extends ConsumerStatefulWidget {
+  const RegisterScreen({super.key});
 
-class RegisterScreen extends StatelessWidget {
-  RegisterScreen({super.key});
+  @override
+  ConsumerState<RegisterScreen> createState() => _RegisterScreenState();
+}
 
+class _RegisterScreenState extends ConsumerState<RegisterScreen> {
   final _formKey = GlobalKey<FormState>();
 
   final userNameController = TextEditingController();
@@ -21,9 +23,7 @@ class RegisterScreen extends StatelessWidget {
 
   Future<void> registerUser(BuildContext context) async {
     if (_formKey.currentState != null && _formKey.currentState!.validate()) {
-      Future<bool> result = context
-          .read<AuthService>()
-          .registerUser(userNameController.text, passwordController.text);
+      Future<bool> result = ref.read(authServiceProvier).registerUser(userNameController.text, passwordController.text);
       if (!await result) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
@@ -31,9 +31,6 @@ class RegisterScreen extends StatelessWidget {
           ),
         );
       }
-      print('Registration Successful');
-    } else {
-      print('Registration Form validation failed');
     }
   }
 

@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 
 import '../theme.dart';
@@ -30,7 +28,7 @@ class LoginTextField extends StatelessWidget {
         }),
         controller: textEditingController,
         decoration: InputDecoration(
-          border: OutlineInputBorder(),
+          border: const OutlineInputBorder(),
           hintText: hintText,
           hintStyle: ThemeTextStyle.loginTextFieldStyle,
         ),

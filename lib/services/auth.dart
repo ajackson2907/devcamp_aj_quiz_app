@@ -1,5 +1,3 @@
-// ignore_for_file: avoid_print
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -12,6 +10,7 @@ class AuthService {
     try {
       await FirebaseAuth.instance.signInAnonymously();
     } on FirebaseAuthException catch (e) {
+      // ignore: avoid_print
       print(e.stackTrace);
     }
   }
@@ -30,6 +29,7 @@ class AuthService {
 
       await FirebaseAuth.instance.signInWithCredential(authCredential);
     } on FirebaseAuthException catch (e) {
+      // ignore: avoid_print
       print(e.stackTrace);
     }
   }
@@ -47,7 +47,6 @@ class AuthService {
       );
       return true;
     } catch (e) {
-      print(e);
       return false;
     }
   }
@@ -62,7 +61,6 @@ class AuthService {
       );
       return true;
     } catch (e) {
-      print(e);
       return false;
     }
   }

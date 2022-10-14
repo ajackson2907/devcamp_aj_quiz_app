@@ -1,9 +1,8 @@
 import 'package:fdc_aj_quiz_app/helpers/app_constants.dart';
+import 'package:fdc_aj_quiz_app/models/models.dart';
+import 'package:fdc_aj_quiz_app/shared/progress_bar.dart';
+import 'package:fdc_aj_quiz_app/topics/drawer.dart';
 import 'package:flutter/material.dart';
-
-import '../models/models.dart';
-import '../shared/progress_bar.dart';
-import 'drawer.dart';
 
 class TopicItem extends StatelessWidget {
   final Topic topic;

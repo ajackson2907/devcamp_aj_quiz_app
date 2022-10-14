@@ -1,7 +1,8 @@
+import 'package:fdc_aj_quiz_app/main.dart';
+import 'package:fdc_aj_quiz_app/models/models.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../models/models.dart';
 
 class AnimatedProgressbar extends StatelessWidget {
   final double value;
@@ -57,14 +58,16 @@ class AnimatedProgressbar extends StatelessWidget {
   }
 }
 
-class TopicProgress extends StatelessWidget {
+class TopicProgress extends ConsumerWidget {
   const TopicProgress({super.key, required this.topic});
 
   final Topic topic;
 
   @override
-  Widget build(BuildContext context) {
-    Report report = Provider.of<Report>(context);
+  Widget build(BuildContext context, WidgetRef ref) {
+    Report report = Report();
+    ref.watch(reportStreamProvider).whenData((value) => report = value);
+    
     return Row(
       children: [
         _progressCount(report, topic),

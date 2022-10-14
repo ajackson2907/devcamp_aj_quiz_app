@@ -1,25 +1,25 @@
-import 'package:fdc_aj_quiz_app/models/models.dart';
+import 'package:fdc_aj_quiz_app/helpers/app_constants.dart';
+import 'package:fdc_aj_quiz_app/main.dart';
+import 'package:fdc_aj_quiz_app/services/auth.dart';
 import 'package:fdc_aj_quiz_app/services/firestore.dart';
+import 'package:fdc_aj_quiz_app/shared/loading.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../helpers/app_constants.dart';
-import '../services/auth.dart';
-import '../shared/shared.dart';
-
-class ProfileScreen extends StatefulWidget {
+class ProfileScreen extends ConsumerStatefulWidget {
   const ProfileScreen({super.key});
 
   @override
-  State<ProfileScreen> createState() => _ProfileScreenState();
+  ConsumerState<ProfileScreen> createState() => _ProfileScreenState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
+class _ProfileScreenState extends ConsumerState<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
-    var report = Provider.of<Report>(context);
+    var report = ref.watch(reportStreamProvider);
     var user = AuthService().user;
-
+    var total = 0;
+    report.whenData((value) => total = value.total);
     if (user != null) {
       return Scaffold(
         appBar: AppBar(
@@ -44,7 +44,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               Text(user.email ?? 'Anonymous User', style: Theme.of(context).textTheme.headline6),
               const Spacer(),
-              Text('${report.total}', style: Theme.of(context).textTheme.headline2),
+              Text('$total', style: Theme.of(context).textTheme.headline2),
               Text('Quizzes Completed', style: Theme.of(context).textTheme.subtitle2),
               const SizedBox(height: 24),
               ElevatedButton(

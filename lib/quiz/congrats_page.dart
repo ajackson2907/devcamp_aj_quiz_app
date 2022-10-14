@@ -1,9 +1,8 @@
+import 'package:fdc_aj_quiz_app/helpers/app_constants.dart';
+import 'package:fdc_aj_quiz_app/models/models.dart';
 import 'package:fdc_aj_quiz_app/services/firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
-import '../helpers/app_constants.dart';
-import '../models/models.dart';
 
 class CongratsPage extends StatelessWidget {
   final Quiz quiz;
