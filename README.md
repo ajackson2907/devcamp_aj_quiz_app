@@ -1,16 +1,10 @@
-# fdc_aj_quiz_app
+# Flutter Dev Camp Quiz App
 
-Quiz Application built on the Flutter Dev Camp
+Quiz Application built as one of the assignments during the [Flutter Dev Camp](https://www.flutterdevcamp.com/).
 
-## Getting Started
+## Project Branches
 
-This project is a starting point for a Flutter application.
+There are two branches:
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- The **main** branch is the code taken from the starter project and the online session.
+- The **convert-to-riverpod** branch is the main branch with the project having removed Provider and replaced with Riverpod.
